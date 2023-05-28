@@ -1,0 +1,81 @@
+ - Basic Requirements:
+
+  1. Install Docker for Desktop/ Docker Toolbox as per your system support from below link. 
+    Docker Desktop (For Windows 10+ 64-bit) Download Link : https://dockr.ly/38BQNLT
+    Docker Toolbox (For Windows 7 or earlier 32-bit) Download Link : https://bit.ly/3lwZxpc
+
+  2. Install Nodejs from below link.
+    https://bit.ly/3ailfen
+
+  3. Add docker (from microsoft) extension in VS Code.
+
+
+ -Steps to Implement the Assignment:
+
+  Step-1: Create a folder (Note: Folder name should be in lowercase).  
+  Let the folder name be: partb
+
+  Step-2: Create any file with any extension( such as .js, .txt, .py, etc....) in the same above folder(Here, partb) and write some content in the file. 
+  Let the file name be: yogesh.js
+
+  The file contains the following code:
+  console.log("Name: Yogesh Borhade");
+  console.log("Class: TE");
+  console.log("Subject: LP-II Web Application Development");
+  console.log("We are implementing Assignment-2B");
+
+  Step-3: Create file in the same folder with file name as- Dockerfile and press enter key. (Note: Don't add any file extension after the file name)
+  File: Dockerfile 
+   
+  Step-4: Write following code in Dockerfile (Created in Step-3) and save it.:
+  FROM node: alpine
+  COPY . /partb
+  CMD node /partb/yogesh.js
+
+
+
+  Step-5: Open terminal in VS Code and type the following command:
+  docker --version
+
+  We will see the version of your docker if it is installed successfully. 
+
+  Step-6: In the same terminal in VS Code, type the following command:
+  node yogesh.js
+
+  It will display the contents in your file which is created in Step-2.
+
+  Step-7: In the same terminal in VS Code, type the following command:
+  docker build -t partb . 
+
+  We will see that it is successfully built. 
+
+  Step-8: In the same terminal in VS Code, type the following command:
+  docker images
+
+  You will see the docker images with REPOSITORY, TAG, IMAGE ID, CREATED (Time), SIZE.
+
+
+** Some Basic Questions That Can Be Asked:
+ 1. What is docker?
+Docker is an open-source platform that simplifies application deployment by using containers.
+Containers are self-contained units that include all the necessary software and dependencies. 
+Docker allows you to package, deploy, and manage applications easily, making them portable and consistent across different environments. 
+It streamlines development workflows, improves scalability, and ensures application reproducibility.
+
+ 2. What is use of docker?
+Application Isolation: Docker enables the isolation of applications and their dependencies within containers. This isolation ensures that applications run consistently across different environments, eliminating issues caused by differences in underlying infrastructure.
+Environment Consistency: Docker provides a consistent environment for developers, testers, and production systems. The containers encapsulate the application and its dependencies, ensuring that everyone works with the same environment, reducing "it works on my machine" issues.
+
+Faster Development Cycles: With Docker, developers can quickly set up and tear down development environments. Containers provide a lightweight and reproducible environment, enabling faster testing, debugging, and iteration of applications.
+Continuous Integration/Continuous Deployment (CI/CD): Docker integrates well with CI/CD pipelines, allowing for automated building, testing, and deployment of applications. It enables the creation of consistent, reproducible, and automated workflows.
+
+        3. What is docker container?
+A Docker container is a lightweight and standalone execution environment that packages an application and its dependencies together. It provides a consistent and isolated environment for running applications, regardless of the underlying infrastructure.
+
+Containers are created from Docker images, which are self-contained and read-only templates that contain all the necessary components for running an application, such as the code, runtime, system tools, libraries, and settings. An image serves as a blueprint for creating one or more containers.
+
+        4. What do you mean by docker images?
+Docker images are self-contained packages that contain all the necessary files and configurations to run an application. They are created based on instructions in a Dockerfile and stored in a registry. Images serve as the blueprints for creating Docker containers, allowing for consistent and reproducible application deployments.
+
+ 5. Which commands have you used to implement this assignment? 
+ 6. Explain the steps to create docker images.
